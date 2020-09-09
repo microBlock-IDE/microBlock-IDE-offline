@@ -1,0 +1,4 @@
+[submodule "microBlock-IDE"]
+	path = microBlock-IDE
+	url = https://github.com/microBlock-IDE/microBlock-IDE
+	branch = master

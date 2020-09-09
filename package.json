@@ -1,0 +1,22 @@
+{
+  "name": "microblock-ide-offline",
+  "version": "1.0.0",
+  "description": "microBlock IDE (offline version)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microBlock-IDE/microBlock-IDE-offline.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/microBlock-IDE/microBlock-IDE-offline/issues"
+  },
+  "homepage": "https://github.com/microBlock-IDE/microBlock-IDE-offline#readme",
+  "devDependencies": {
+    "electron": "^10.1.1"
+  }
+}
