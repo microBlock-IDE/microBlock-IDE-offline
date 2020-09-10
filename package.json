@@ -4,7 +4,8 @@
   "description": "microBlock IDE (offline version)",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "install": "electron-rebuild"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,11 @@
   },
   "homepage": "https://github.com/microBlock-IDE/microBlock-IDE-offline#readme",
   "devDependencies": {
-    "electron": "^10.1.1"
+    "electron": "^9.2.0",
+    "electron-rebuild": "^2.0.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "serialport": "^9.0.1"
   }
 }
