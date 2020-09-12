@@ -9,11 +9,14 @@ function createWindow () {
     height: 600,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    icon: 'microBlock-IDE/favicon.ico'
   })
 
   // and load the index.html of the app.
   win.loadFile('microBlock-IDE/index.html')
+
+  win.maximize()
 
   // Open the DevTools.
   win.webContents.openDevTools()
