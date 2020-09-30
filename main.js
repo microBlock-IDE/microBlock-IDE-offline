@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron')
+const path = require('path');
 
 app.allowRendererProcessReuse = false;
 
@@ -10,7 +11,7 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
-    icon: 'microBlock-IDE/favicon.ico'
+    icon: path.join(__dirname, "microBlock-IDE/favicon.ico")
   })
 
   // and load the index.html of the app.
@@ -19,7 +20,7 @@ function createWindow () {
   win.maximize()
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
