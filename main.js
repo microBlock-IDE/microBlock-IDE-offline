@@ -3,6 +3,8 @@ const path = require('path');
 
 app.allowRendererProcessReuse = false;
 
+global.sharedObj = { argv: process.argv };
+
 function createWindow () {
   // Create the browser window.
   const win = new BrowserWindow({
