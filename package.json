@@ -37,7 +37,14 @@
       "icon": "build/favicon.ico"
     },
     "mac": {
-      "category": "public.app-category.developer-tools"
+      "category": "public.app-category.developer-tools",
+      "target": "default",
+      "icon": "build/favicon.png"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "build/favicon.png",
+      "category": "Development"
     },
     "fileAssociations": [
       {
@@ -48,5 +55,6 @@
         "role": "Editor"
       }
     ]
-  }
+  },
+  "postinstall": "electron-builder install-app-deps"
 }
