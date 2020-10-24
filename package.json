@@ -1,17 +1,19 @@
 {
   "name": "microblock-ide-offline",
-  "version": "2.0.0-beta",
+  "version": "2.0.0-beta-2",
   "description": "microBlock IDE (offline version)",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "install": "electron-rebuild"
+    "install": "electron-rebuild",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/microBlock-IDE/microBlock-IDE-offline.git"
   },
-  "author": "",
+  "author": "microBlock",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/microBlock-IDE/microBlock-IDE-offline/issues"
@@ -19,10 +21,32 @@
   "homepage": "https://github.com/microBlock-IDE/microBlock-IDE-offline#readme",
   "devDependencies": {
     "electron": "^9.2.0",
-    "electron-rebuild": "^2.0.2"
+    "electron-rebuild": "^2.0.2",
+    "electron-builder": "^22.9.1"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
     "serialport": "^9.0.1"
+  },
+  "build": {
+    "appId": "com.microblock.app",
+    "productName": "microBlock IDE",
+    "asar": false,
+    "win": {
+      "target": "msi",
+      "icon": "build/favicon.ico"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "fileAssociations": [
+      {
+        "ext": "mby",
+        "name": "MBY",
+        "description": "microBlock project file",
+        "icon": "build/favicon.ico",
+        "role": "Editor"
+      }
+    ]
   }
 }
