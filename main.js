@@ -13,7 +13,7 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
-    icon: path.join(__dirname, "microBlock-IDE/favicon.ico")
+    icon: path.join(__dirname, "microBlock-IDE/favicon.png")
   })
 
   // and load the index.html of the app.
