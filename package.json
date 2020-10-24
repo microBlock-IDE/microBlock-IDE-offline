@@ -39,7 +39,7 @@
     "mac": {
       "category": "public.app-category.developer-tools",
       "target": "default",
-      "icon": "build/favicon.png"
+      "icon": "build/favicon.icns"
     },
     "linux": {
       "target": "AppImage",
