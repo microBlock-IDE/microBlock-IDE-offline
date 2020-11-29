@@ -6,11 +6,12 @@ app.allowRendererProcessReuse = false;
 
 global.sharedObj = {
     argv: process.argv,
+    mainWin: null,
     dashboardWin: null
 };
 
 function createWindow() {
-    const win = new BrowserWindow({
+    global.sharedObj.mainWin = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
@@ -18,13 +19,13 @@ function createWindow() {
         },
         icon: path.join(__dirname, "microBlock-IDE/favicon.png")
     })
-    win.loadFile("microBlock-IDE/index.html");
-    win.maximize();
+    global.sharedObj.mainWin.loadFile("microBlock-IDE/index.html");
+    global.sharedObj.mainWin.maximize();
 
     // Open the DevTools.
-    // win.webContents.openDevTools()
+    // mainWin.webContents.openDevTools()
 
-    win.on('close', () => {
+    global.sharedObj.mainWin.on('close', () => {
         if (global.sharedObj.dashboardWin) {
             global.sharedObj.dashboardWin.close();
         }
