@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, session, protocol } = require('electron')
 const path = require('path');
 var ipcMain = require('electron').ipcMain;
 
@@ -7,19 +7,43 @@ app.allowRendererProcessReuse = false;
 global.sharedObj = {
     argv: process.argv,
     mainWin: null,
-    dashboardWin: null
+    dashboardWin: null,
+    extensionDir: path.normalize(`${__dirname}/extension`),
+	rootPath: path.normalize(`${__dirname}/microBlock-IDE`),
 };
 
+protocol.registerSchemesAsPrivileged([
+    { 
+        scheme: 'microblock', 
+        privileges: { 
+            standard: true, 
+            supportFetchAPI: true, 
+            secure: true 
+        }
+    }
+]);
+
 function createWindow() {
+    const partition = 'persist:microblock';
+    const ses = session.fromPartition(partition);
+
+    ses.protocol.registerFileProtocol('microblock', (request, callback) => {
+        const url = request.url.substr(13);
+        callback({ path: path.normalize(`${__dirname}/microBlock-IDE/${url}`) })
+    });
+
+    
     global.sharedObj.mainWin = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            partition
         },
         icon: path.join(__dirname, "microBlock-IDE/favicon.png")
     })
-    global.sharedObj.mainWin.loadFile("microBlock-IDE/index.html");
+    // global.sharedObj.mainWin.loadFile("microBlock-IDE/index.html");
+    global.sharedObj.mainWin.loadURL("microblock://./index.html");
     global.sharedObj.mainWin.maximize();
 
     // Open the DevTools.
