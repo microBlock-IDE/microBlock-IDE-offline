@@ -1,11 +1,11 @@
 {
   "name": "microblock-ide-offline",
-  "version": "2.3.0",
+  "version": "2.4.0-beta2",
   "description": "microBlock IDE (offline version)",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "install": "electron-rebuild",
+    "install": "electron-rebuild -f -w \"wifi-control\"",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
@@ -20,14 +20,18 @@
   },
   "homepage": "https://github.com/microBlock-IDE/microBlock-IDE-offline#readme",
   "devDependencies": {
+    "check-dependencies": "^1.1.0",
     "electron": "^9.2.0",
-    "electron-rebuild": "^2.0.2",
-    "electron-builder": "^22.9.1"
+    "electron-builder": "^22.9.1",
+    "electron-rebuild": "^2.3.5"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
     "dive": "^0.5.0",
-    "serialport": "^9.0.1"
+    "node-disk-info": "^1.1.0",
+    "node-wifi": "^2.0.14",
+    "serialport": "^9.0.1",
+    "wifi-control": "^2.0.1"
   },
   "build": {
     "appId": "com.microblock.app",
