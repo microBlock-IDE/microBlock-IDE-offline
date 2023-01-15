@@ -1,6 +1,6 @@
 {
   "name": "microblock-ide-offline",
-  "version": "2.7.0-beta4",
+  "version": "2.7.0",
   "description": "microBlock IDE (offline version)",
   "main": "main.js",
   "scripts": {
