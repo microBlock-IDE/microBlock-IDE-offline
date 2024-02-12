@@ -5,3 +5,4 @@ sketch/*
 Arduino/user/*
 Arduino/data/*
 Arduino/downloads/*
+bin/arduino-cli/settings.yaml
