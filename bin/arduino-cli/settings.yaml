@@ -1,0 +1,6 @@
+directories:
+  data: C:\Users\sonth\GitHub\microBlock-IDE-offline\Arduino\data
+  downloads: C:\Users\sonth\GitHub\microBlock-IDE-offline\Arduino\downloads
+  user: C:\Users\sonth\GitHub\microBlock-IDE-offline\Arduino\user
+updater:
+  enable_notification: fasle

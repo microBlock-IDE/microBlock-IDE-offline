@@ -1,3 +1,7 @@
 node_modules
 dist
 package-lock.json
+sketch/*
+Arduino/user/*
+Arduino/data/*
+Arduino/downloads/*
