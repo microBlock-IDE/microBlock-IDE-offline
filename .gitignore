@@ -2,7 +2,5 @@ node_modules
 dist
 package-lock.json
 sketch/*
-Arduino/user/*
-Arduino/data/*
-Arduino/downloads/*
+Arduino/*
 bin/arduino-cli/settings.yaml

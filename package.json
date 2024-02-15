@@ -1,6 +1,6 @@
 {
-  "name": "microblock-ide-offline",
-  "version": "3.0.0-beta",
+  "name": "mblock",
+  "version": "3.0.0-beta2",
   "description": "microBlock IDE (offline version)",
   "main": "main.js",
   "scripts": {
@@ -36,6 +36,9 @@
     "appId": "com.microblock.app",
     "productName": "microBlock IDE",
     "asar": false,
+    "files":[
+      "!Arduino/*"
+    ],
     "win": {
       "target": "msi",
       "icon": "build/favicon.ico"
