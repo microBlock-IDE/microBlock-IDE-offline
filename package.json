@@ -1,6 +1,6 @@
 {
   "name": "mblock",
-  "version": "3.0.0-beta3",
+  "version": "3.0.0",
   "description": "microBlock IDE (offline version)",
   "main": "main.js",
   "scripts": {
